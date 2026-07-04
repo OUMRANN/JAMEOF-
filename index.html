@@ -16,6 +16,7 @@
     --blue-deep:#12385F;
     --blue-mid:#1D5B95;
     --sky:#2C86C7;
+    --gold:#C5A880;
     --ice:#F3F8FC;
     --white:#FFFFFF;
     --line:#E2EAF1;
@@ -24,7 +25,7 @@
     --ff-display:'Fraunces', serif;
     --ff-body:'Inter', sans-serif;
     --ff-mono:'IBM Plex Mono', monospace;
-    --shadow-lux: 0 12px 34px rgba(10,38,71,0.06);
+    --shadow-lux: 0 20px 45px rgba(10,38,71,0.06);
   }
 
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -130,13 +131,13 @@
   .hero-trust .item{font-family:var(--ff-mono);font-size:12px;color:var(--ink-soft);}
   .hero-trust .item b{display:block;font-family:var(--ff-display);font-size:22px;color:var(--navy);font-weight:600;}
 
-  /* Luxury Image Container Engine */
+  /* Luxury Framed Showcase Engine */
   .photo-slot {
     position:relative;
     background:var(--white);
     box-shadow:var(--shadow-lux);
     border:1px solid var(--line);
-    border-radius:8px;
+    border-radius:12px;
     overflow:hidden;
     display:flex;
     align-items:center;
@@ -148,13 +149,32 @@
     transition:transform 0.4s ease;
   }
 
-  /* Hero Specific Sizing (Fits Logo cleanly as seen in image.png) */
+  /* Premium Logo Framing Showcase (For image.png) */
+  .hero-photo-wrapper {
+    position:relative;
+    padding:12px;
+    background:linear-gradient(145deg, #ffffff, #f8fafc);
+    border-radius:16px;
+    border:1px solid rgba(197, 168, 128, 0.2);
+    box-shadow:var(--shadow-lux);
+  }
+  .hero-photo-wrapper::before {
+    content:'';
+    position:absolute;
+    inset:4px;
+    border:1px solid rgba(10, 38, 71, 0.04);
+    border-radius:12px;
+    pointer-events:none;
+  }
   .hero-photo {
     aspect-ratio:4/3;
-    padding:16px;
+    border:none;
+    box-shadow:none;
+    background:transparent;
   }
   .hero-photo img {
-    object-fit:contain; /* Keeps logo crisp and uncropped */
+    object-fit:contain;
+    padding:12px;
   }
 
   section{padding:100px 0;}
@@ -185,7 +205,7 @@
     box-shadow:none;
   }
   .pass-photo img {
-    object-fit:cover; /* Makes destination scenery fill seamlessly */
+    object-fit:cover;
   }
   .pass-card:hover .pass-photo img {
     transform:scale(1.03);
@@ -381,7 +401,7 @@
     .menu-toggle{display:block;}
     .nav-cta .btn-outline{display:none;}
     .hero-grid{grid-template-columns:1fr;gap:40px;}
-    .hero-photo{order:-1;aspect-ratio:4/3;width:100%;max-width:440px;margin:0 auto;}
+    .hero-photo-wrapper{order:-1;width:100%;max-width:440px;margin:0 auto;}
     .why-wrap{grid-template-columns:1fr;}
   }
   @media (max-width:600px){
@@ -408,7 +428,7 @@
       <a href="#apply">Apply</a>
     </nav>
     <div class="nav-cta">
-      <a href="tel:+251000000000" class="btn btn-outline">Call Us</a>
+      <a href="tel:+251911134027" class="btn btn-outline">Call Us</a>
       <a href="#apply" class="btn btn-navy">Apply Now</a>
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
     </div>
@@ -417,7 +437,7 @@
 
 <main id="top">
 
-  <!-- HERO -->
+  <!-- HERO SECTION WITH LUXURY IMAGE SHOWCASE -->
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
@@ -434,8 +454,10 @@
           <div class="item"><b>End-to-End</b>Visa &amp; Travel Support</div>
         </div>
       </div>
-      <div class="photo-slot hero-photo" data-reveal>
-        <img src="JAMEOF .JPG" alt="JAMEOF Agency Logo">
+      <div class="hero-photo-wrapper" data-reveal>
+        <div class="photo-slot hero-photo">
+          <img src="image.png" alt="JAMEOF Agency Logo Framework">
+        </div>
       </div>
     </div>
   </section>
@@ -460,7 +482,7 @@
 
         <div class="pass-card" data-reveal>
           <div class="photo-slot pass-photo">
-            <img src="RIYADH.jpg" alt="Saudi Arabia/RIYADH Destination">
+            <img src="saudi.jpg" alt="Saudi Arabia Destination">
           </div>
           <div class="pass-body">
             <div class="pass-row"><span class="pass-code">JED / RUH</span><span class="pass-flag">🇸🇦</span></div>
@@ -472,7 +494,7 @@
 
         <div class="pass-card" data-reveal>
           <div class="photo-slot pass-photo">
-            <img src="QATAR.JPG" alt="Qatar Destination">
+            <img src="qatar.jpg" alt="Qatar Destination">
           </div>
           <div class="pass-body">
             <div class="pass-row"><span class="pass-code">DOH</span><span class="pass-flag">🇶🇦</span></div>
@@ -484,7 +506,7 @@
 
         <div class="pass-card" data-reveal>
           <div class="photo-slot pass-photo">
-            <img src="KUWAIT.JPG" alt="Kuwait Destination">
+            <img src="kuwait.jpg" alt="Kuwait Destination">
           </div>
           <div class="pass-body">
             <div class="pass-row"><span class="pass-code">KWI</span><span class="pass-flag">🇰🇼</span></div>
@@ -496,7 +518,7 @@
 
         <div class="pass-card" data-reveal>
           <div class="photo-slot pass-photo">
-            <img src="JORDAN.JPG" alt="Jordan Destination">
+            <img src="jordan.jpg" alt="Jordan Destination">
           </div>
           <div class="pass-body">
             <div class="pass-row"><span class="pass-code">AMM</span><span class="pass-flag">🇯🇴</span></div>
@@ -508,7 +530,7 @@
 
         <div class="pass-card" data-reveal>
           <div class="photo-slot pass-photo">
-            <img src="DUBAI.JPG" alt="UAE Destination">
+            <img src="uae.jpg" alt="UAE Destination">
           </div>
           <div class="pass-body">
             <div class="pass-row"><span class="pass-code">DXB</span><span class="pass-flag">🇦🇪</span></div>
@@ -520,7 +542,7 @@
 
         <div class="pass-card" data-reveal>
           <div class="photo-slot pass-photo">
-            <img src="BAHRAIN.JPG" alt="Bahrain Destination">
+            <img src="bahrain.jpg" alt="Bahrain Destination">
           </div>
           <div class="pass-body">
             <div class="pass-row"><span class="pass-code">BAH</span><span class="pass-flag">🇧🇭</span></div>
@@ -663,10 +685,10 @@
           <span class="eyebrow">Get In Touch</span>
           <h2>Start your application</h2>
           <p>Reach out directly or fill in the form and our team will follow up with next steps for your chosen destination.</p>
-          <div class="info-row"><span class="k">Phone</span><span class="v">[Add phone number]</span></div>
-          <div class="info-row"><span class="k">Email</span><span class="v">[Add email address]</span></div>
-          <div class="info-row"><span class="k">Office</span><span class="v">[Add office address, city]</span></div>
-          <div class="info-row"><span class="k">Hours</span><span class="v">[Add opening hours]</span></div>
+          <div class="info-row"><span class="k">Phone</span><span class="v">+251 911 13 40 27</span></div>
+          <div class="info-row"><span class="k">Email</span><span class="v">info@jameof.com</span></div>
+          <div class="info-row"><span class="k">Office</span><span class="v">Addis Ababa, Ethiopia</span></div>
+          <div class="info-row"><span class="k">Hours</span><span class="v">Mon - Sat: 8:30 AM - 5:30 PM</span></div>
         </div>
         <div class="apply-form">
           <h3>Candidate Interest Form</h3>
@@ -730,8 +752,8 @@
       </div>
       <div class="foot-col">
         <h4>Contact</h4>
-        <p>[0911134027]</p>
-        <p>[Add office address]</p>
+        <p>+251 911 13 40 27</p>
+        <p>Addis Ababa, Ethiopia</p>
       </div>
     </div>
     <div class="foot-bottom">

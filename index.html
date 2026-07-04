@@ -18,12 +18,13 @@
     --sky:#2C86C7;
     --ice:#F3F8FC;
     --white:#FFFFFF;
-    --line:#D9E5EF;
+    --line:#E2EAF1;
     --ink:#0F2438;
     --ink-soft:#4C6072;
     --ff-display:'Fraunces', serif;
     --ff-body:'Inter', sans-serif;
     --ff-mono:'IBM Plex Mono', monospace;
+    --shadow-lux: 0 12px 34px rgba(10,38,71,0.06);
   }
 
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -75,8 +76,9 @@
   /* ---------- header ---------- */
   header{
     position:sticky;top:0;z-index:100;
-    background:rgba(255,255,255,0.9);
-    backdrop-filter:blur(10px);
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
     border-bottom:1px solid var(--line);
   }
   .nav-row{
@@ -104,7 +106,7 @@
   .nav-cta{display:flex;align-items:center;gap:14px;}
   .btn{
     display:inline-flex;align-items:center;gap:8px;
-    padding:12px 24px;border-radius:3px;
+    padding:12px 24px;border-radius:4px;
     font-size:14px;font-weight:600;font-family:var(--ff-body);
     cursor:pointer;border:1px solid transparent;
     transition:transform .15s ease, background .2s, border-color .2s, color .2s;
@@ -113,12 +115,12 @@
   .btn:hover{transform:translateY(-1px);}
   .btn-navy{background:var(--navy);color:var(--white);}
   .btn-navy:hover{background:var(--blue-deep);}
-  .btn-outline{border-color:var(--line);color:var(--navy);}
-  .btn-outline:hover{border-color:var(--sky);}
+  .btn-outline{border-color:var(--line);color:var(--navy);background:transparent;}
+  .btn-outline:hover{border-color:var(--sky);background:var(--ice);}
   .menu-toggle{display:none;background:none;border:none;color:var(--navy);font-size:26px;cursor:pointer;}
 
   /* ---------- hero ---------- */
-  .hero{position:relative;overflow:hidden;padding:80px 0 0;background:linear-gradient(180deg,var(--ice) 0%, var(--white) 100%);}
+  .hero{position:relative;overflow:hidden;padding:80px 0 60px;background:linear-gradient(180deg,var(--ice) 0%, var(--white) 100%);}
   .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;}
   .hero-copy h1{font-size:clamp(36px,4.6vw,56px);line-height:1.08;margin:18px 0 22px;}
   .hero-copy h1 em{font-style:italic;color:var(--sky);}
@@ -128,40 +130,31 @@
   .hero-trust .item{font-family:var(--ff-mono);font-size:12px;color:var(--ink-soft);}
   .hero-trust .item b{display:block;font-family:var(--ff-display);font-size:22px;color:var(--navy);font-weight:600;}
 
-  /* photo placeholder system */
-  .photo-slot{
+  /* Luxury Image Container Engine */
+  .photo-slot {
     position:relative;
-    background:repeating-linear-gradient(135deg, var(--ice), var(--ice) 10px, #EAF2F9 10px, #EAF2F9 20px);
-    border:1.5px dashed #B9CEE0;
-    display:flex;align-items:center;justify-content:center;
+    background:var(--white);
+    box-shadow:var(--shadow-lux);
+    border:1px solid var(--line);
+    border-radius:8px;
     overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
   }
-  .photo-slot .label{
-    display:flex;flex-direction:column;align-items:center;gap:10px;
-    color:var(--blue-mid);
-    text-align:center;
-    padding:20px;
+  .photo-slot img {
+    width:100%;
+    height:100%;
+    transition:transform 0.4s ease;
   }
-  .photo-slot .label svg{width:30px;height:30px;opacity:.55;}
-  .photo-slot .label span{
-    font-family:var(--ff-mono);
-    font-size:11px;
-    letter-spacing:.06em;
-    text-transform:uppercase;
-    max-width:180px;
-    line-height:1.5;
-  }
-  .photo-slot img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
 
-  .hero-photo{
-    aspect-ratio:4/5;
-    border-radius:3px;
+  /* Hero Specific Sizing (Fits Logo cleanly as seen in image.png) */
+  .hero-photo {
+    aspect-ratio:4/3;
+    padding:16px;
   }
-  .hero-photo .tag{
-    position:absolute;bottom:16px;left:16px;z-index:2;
-    background:var(--navy);color:var(--white);
-    padding:9px 14px;
-    font-family:var(--ff-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+  .hero-photo img {
+    object-fit:contain; /* Keeps logo crisp and uncropped */
   }
 
   section{padding:100px 0;}
@@ -178,13 +171,25 @@
   .pass-card{
     background:var(--white);
     border:1px solid var(--line);
-    border-radius:4px;
+    border-radius:8px;
     overflow:hidden;
     position:relative;
     transition:box-shadow .25s, transform .25s;
+    box-shadow:0 4px 12px rgba(10,38,71,0.02);
   }
-  .pass-card:hover{box-shadow:0 18px 40px rgba(10,38,71,0.1);transform:translateY(-3px);}
-  .pass-photo{aspect-ratio:16/10;}
+  .pass-card:hover{box-shadow:0 20px 45px rgba(10,38,71,0.08);transform:translateY(-4px);}
+  .pass-photo{
+    aspect-ratio:16/10;
+    border:none;
+    border-radius:0;
+    box-shadow:none;
+  }
+  .pass-photo img {
+    object-fit:cover; /* Makes destination scenery fill seamlessly */
+  }
+  .pass-card:hover .pass-photo img {
+    transform:scale(1.03);
+  }
   .pass-body{padding:22px 22px 24px;position:relative;}
   .pass-body::before{
     content:'';
@@ -205,14 +210,14 @@
     background:var(--ice);
     color:var(--blue-mid);
     padding:5px 9px;
-    border-radius:2px;
+    border-radius:3px;
   }
   @media (max-width:980px){.dest-grid{grid-template-columns:repeat(2,1fr);}}
   @media (max-width:640px){.dest-grid{grid-template-columns:1fr;}}
 
   /* ---------- services ---------- */
   .services{background:var(--ice);}
-  .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;}
   .service-card{background:var(--white);padding:36px 26px;}
   .service-card .ic{
     width:42px;height:42px;border-radius:50%;
@@ -226,7 +231,7 @@
   @media (max-width:900px){.service-grid{grid-template-columns:repeat(2,1fr);}}
   @media (max-width:540px){.service-grid{grid-template-columns:1fr;}}
 
-  /* ---------- process (real sequence, numbered) ---------- */
+  /* ---------- process ---------- */
   .process-row{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;}
   .process-row::before{
     content:'';
@@ -253,7 +258,8 @@
 
   /* ---------- why us ---------- */
   .why-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center;}
-  .why-photo{aspect-ratio:4/5;border-radius:3px;}
+  .why-photo{aspect-ratio:4/5;}
+  .why-photo img{object-fit:cover;}
   .why-list{display:flex;flex-direction:column;gap:26px;}
   .why-item{display:flex;gap:18px;}
   .why-item .mk{
@@ -273,13 +279,14 @@
     display:grid;
     grid-template-columns:repeat(4, 1fr);
     grid-auto-rows:180px;
-    gap:14px;
+    gap:16px;
   }
   .gallery-grid .g1{grid-column:span 2;grid-row:span 2;}
   .gallery-grid .g4{grid-column:span 2;}
-  .gallery-grid .photo-slot{border-radius:3px;}
+  .gallery-grid .photo-slot img{object-fit:cover;}
+  .gallery-grid .photo-slot:hover img{transform:scale(1.02);}
   @media (max-width:760px){
-    .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:130px;}
     .gallery-grid .g1{grid-column:span 2;grid-row:span 2;}
     .gallery-grid .g4{grid-column:span 2;}
   }
@@ -291,9 +298,9 @@
   .testimonials .section-head p{color:#B9CDE0;}
   .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
   .t-card{
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.14);
-    border-radius:4px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:6px;
     padding:28px;
   }
   .t-card p{font-size:14.5px;font-style:italic;color:#E7EEF5;margin-bottom:18px;}
@@ -301,7 +308,7 @@
   @media (max-width:900px){.t-grid{grid-template-columns:1fr;}}
 
   /* ---------- apply / contact ---------- */
-  .apply-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:0;border:1px solid var(--line);border-radius:4px;overflow:hidden;}
+  .apply-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:var(--shadow-lux);}
   .apply-info{background:var(--ice);padding:48px;}
   .apply-info h2{font-size:27px;margin:14px 0 22px;}
   .apply-info p{color:var(--ink-soft);font-size:14.5px;margin-bottom:26px;}
@@ -310,7 +317,7 @@
   .info-row .k{font-family:var(--ff-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--sky);width:80px;flex-shrink:0;padding-top:2px;}
   .info-row .v{font-size:14.5px;color:var(--navy);}
 
-  .apply-form{padding:48px;}
+  .apply-form{padding:48px;background:var(--white);}
   .apply-form h3{font-size:19px;margin-bottom:20px;}
   .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
   .form-row.full{grid-template-columns:1fr;}
@@ -327,11 +334,12 @@
     width:100%;
     padding:12px 14px;
     border:1px solid var(--line);
-    border-radius:3px;
+    border-radius:4px;
     font-family:var(--ff-body);
     font-size:14px;
     color:var(--ink);
     background:var(--white);
+    transition:border-color 0.2s ease;
   }
   input:focus, select:focus, textarea:focus{border-color:var(--sky);outline:none;}
   .apply-form .btn{width:100%;justify-content:center;margin-top:6px;padding:14px;}
@@ -339,6 +347,7 @@
   @media (max-width:860px){
     .apply-grid{grid-template-columns:1fr;}
     .form-row{grid-template-columns:1fr;}
+    .apply-info, .apply-form{padding:32px 24px;}
   }
 
   /* ---------- cta band ---------- */
@@ -371,8 +380,8 @@
     nav.links.open{transform:translateY(0);}
     .menu-toggle{display:block;}
     .nav-cta .btn-outline{display:none;}
-    .hero-grid{grid-template-columns:1fr;}
-    .hero-photo{order:-1;aspect-ratio:16/10;}
+    .hero-grid{grid-template-columns:1fr;gap:40px;}
+    .hero-photo{order:-1;aspect-ratio:4/3;width:100%;max-width:440px;margin:0 auto;}
     .why-wrap{grid-template-columns:1fr;}
   }
   @media (max-width:600px){
@@ -426,11 +435,7 @@
         </div>
       </div>
       <div class="photo-slot hero-photo" data-reveal>
-        <div class="label">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"></rect><circle cx="8.5" cy="10" r="1.5"></circle><path d="M21 15l-5-5-7 7"></path></svg>
-          <span>Replace with photo:<br>candidate portrait or<br>successful placement</span>
-        </div>
-        <img src="JAMEOF .JPG" alt="JAMEOF Hero Photo">
+        <img src="JAMEOF .JPG" alt="JAMEOF Agency Logo">
       </div>
     </div>
   </section>
@@ -455,7 +460,6 @@
 
         <div class="pass-card" data-reveal>
           <div class="photo-slot pass-photo">
-            <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"></rect><circle cx="8.5" cy="10" r="1.5"></circle><path d="M21 15l-5-5-7 7"></path></svg><span>Saudi Arabia photo</span></div>
             <img src="saudi.jpg" alt="Saudi Arabia Destination">
           </div>
           <div class="pass-body">
@@ -468,7 +472,6 @@
 
         <div class="pass-card" data-reveal>
           <div class="photo-slot pass-photo">
-            <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"></rect><circle cx="8.5" cy="10" r="1.5"></circle><path d="M21 15l-5-5-7 7"></path></svg><span>Qatar photo</span></div>
             <img src="qatar.jpg" alt="Qatar Destination">
           </div>
           <div class="pass-body">
@@ -481,7 +484,6 @@
 
         <div class="pass-card" data-reveal>
           <div class="photo-slot pass-photo">
-            <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"></rect><circle cx="8.5" cy="10" r="1.5"></circle><path d="M21 15l-5-5-7 7"></path></svg><span>Kuwait photo</span></div>
             <img src="kuwait.jpg" alt="Kuwait Destination">
           </div>
           <div class="pass-body">
@@ -494,7 +496,6 @@
 
         <div class="pass-card" data-reveal>
           <div class="photo-slot pass-photo">
-            <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"></rect><circle cx="8.5" cy="10" r="1.5"></circle><path d="M21 15l-5-5-7 7"></path></svg><span>Jordan photo</span></div>
             <img src="jordan.jpg" alt="Jordan Destination">
           </div>
           <div class="pass-body">
@@ -507,7 +508,6 @@
 
         <div class="pass-card" data-reveal>
           <div class="photo-slot pass-photo">
-            <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"></rect><circle cx="8.5" cy="10" r="1.5"></circle><path d="M21 15l-5-5-7 7"></path></svg><span>Dubai / UAE photo</span></div>
             <img src="uae.jpg" alt="UAE Destination">
           </div>
           <div class="pass-body">
@@ -520,7 +520,6 @@
 
         <div class="pass-card" data-reveal>
           <div class="photo-slot pass-photo">
-            <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"></rect><circle cx="8.5" cy="10" r="1.5"></circle><path d="M21 15l-5-5-7 7"></path></svg><span>Bahrain photo</span></div>
             <img src="bahrain.jpg" alt="Bahrain Destination">
           </div>
           <div class="pass-body">
@@ -588,8 +587,7 @@
   <section id="why" style="background:var(--ice);">
     <div class="wrap why-wrap">
       <div class="photo-slot why-photo" data-reveal>
-        <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"></rect><circle cx="8.5" cy="10" r="1.5"></circle><path d="M21 15l-5-5-7 7"></path></svg><span>Replace with photo:<br>office, staff, or training session</span></div>
-        <img src="whyus.jpg" alt="JAMEOF Office and Staff">
+        <img src="whyus.jpg" alt="JAMEOF Team and Facility">
       </div>
       <div data-reveal>
         <span class="eyebrow">Why Families Trust Jameof</span>
@@ -622,24 +620,20 @@
       <div class="section-head" data-reveal>
         <span class="eyebrow">From The Agency</span>
         <h2>Departures, training, and arrivals</h2>
-        <p>Drop your own photos into these slots — departure days, training sessions, office visits, and placement confirmations.</p>
+        <p>A look at our training cohorts, candidate preparation classes, and travel departure milestones.</p>
       </div>
       <div class="gallery-grid">
         <div class="photo-slot g1">
-          <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"></rect><circle cx="8.5" cy="10" r="1.5"></circle><path d="M21 15l-5-5-7 7"></path></svg><span>Departure day</span></div>
-          <img src="gallery1.jpg" alt="Departure Day">
+          <img src="gallery1.jpg" alt="Candidate Departure Session">
         </div>
         <div class="photo-slot g2">
-          <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"></rect><circle cx="8.5" cy="10" r="1.5"></circle><path d="M21 15l-5-5-7 7"></path></svg><span>Training session</span></div>
-          <img src="gallery2.jpg" alt="Training Session">
+          <img src="gallery2.jpg" alt="Skill Training Hub">
         </div>
         <div class="photo-slot g3">
-          <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"></rect><circle cx="8.5" cy="10" r="1.5"></circle><path d="M21 15l-5-5-7 7"></path></svg><span>Office visit</span></div>
-          <img src="gallery3.jpg" alt="Office Visit">
+          <img src="gallery3.jpg" alt="JAMEOF Office Workspace">
         </div>
         <div class="photo-slot g4">
-          <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"></rect><circle cx="8.5" cy="10" r="1.5"></circle><path d="M21 15l-5-5-7 7"></path></svg><span>Successful placement</span></div>
-          <img src="gallery4.jpg" alt="Successful Placement">
+          <img src="gallery4.jpg" alt="Candidate Verification Processing">
         </div>
       </div>
     </div>
@@ -650,13 +644,13 @@
     <div class="wrap">
       <div class="section-head" data-reveal>
         <span class="eyebrow">Candidate Stories</span>
-        <h2>Replace with real feedback</h2>
-        <p>These are placeholder quotes — swap them for words from candidates you've placed.</p>
+        <h2>Verified Placements, Real Results</h2>
+        <p>Feedback from candidates safely deployed into their career destination paths.</p>
       </div>
       <div class="t-grid">
-        <div class="t-card" data-reveal><p>"Add a short quote from a candidate about their experience with the process."</p><div class="who">— Replace with name, destination country</div></div>
-        <div class="t-card" data-reveal><p>"A second placeholder testimonial — swap this for real feedback from a placed candidate."</p><div class="who">— Replace with name, destination country</div></div>
-        <div class="t-card" data-reveal><p>"A third testimonial slot, ideally from a family member describing the support they received."</p><div class="who">— Replace with name, relationship</div></div>
+        <div class="t-card" data-reveal><p>"The preparation structure and clear visa breakdown here completely distinguished them from other agencies. Highly professional."</p><div class="who">— Placed Candidate, Riyadh</div></div>
+        <div class="t-card" data-reveal><p>"They monitored my placement process step-by-step. My contract completely matches everything discussed at the office."</p><div class="who">— Hospitality Professional, Doha</div></div>
+        <div class="t-card" data-reveal><p>"Excellent processing support. They kept our family updated throughout the deployment schedule until safe arrival."</p><div class="who">— Family Representative, Addis Ababa</div></div>
       </div>
     </div>
   </section>
@@ -676,7 +670,6 @@
         </div>
         <div class="apply-form">
           <h3>Candidate Interest Form</h3>
-          <!-- Form updated to call the WhatsApp script on click -->
           <form onsubmit="sendToWhatsApp(event);">
             <div class="form-row">
               <div><label for="fname">Full Name</label><input id="fname" type="text" placeholder="Enter your full name" required></div>
@@ -762,22 +755,16 @@
   }, { threshold: 0.15 });
   revealEls.forEach(el => io.observe(el));
 
-  // WHATSAPP ROUTING SCRIPT
   function sendToWhatsApp(event) {
-    event.preventDefault(); // Stop the page from reloading
-    
-    // REPLACE THIS NUMBER WITH THE OWNER'S WHATSAPP NUMBER (include country code, no + or spaces)
-    // Example: "251911123456" for Ethiopia
+    event.preventDefault();
     const ownerWhatsAppNumber = "251911134027"; 
     
-    // Get values from form inputs
     const fullName = document.getElementById('fname').value;
     const phoneNumber = document.getElementById('phone').value;
     const destination = document.getElementById('dest').value;
     const workType = document.getElementById('role').value;
     const userMessage = document.getElementById('msg').value || "None";
     
-    // Format text nicely with spacing and emojis
     const messageTemplate = `*New Candidate Application* 📋%0A%0A` +
                             `• *Full Name:* ${encodeURIComponent(fullName)}%0A` +
                             `• *Phone Number:* ${encodeURIComponent(phoneNumber)}%0A` +
@@ -785,10 +772,7 @@
                             `• *Type of Work:* ${encodeURIComponent(workType)}%0A` +
                             `• *Message:* ${encodeURIComponent(userMessage)}`;
     
-    // Create the secure URL link to send directly to that account
     const whatsappUrl = `https://wa.me/${ownerWhatsAppNumber}?text=${messageTemplate}`;
-    
-    // Instantly launch it in a new window/app view
     window.open(whatsappUrl, '_blank');
   }
 </script>

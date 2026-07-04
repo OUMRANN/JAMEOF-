@@ -1,1 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JAMEOF Foreign Employment Agency — Verified Work Placement in the Gulf &amp; Jordan</title>
+<meta name="description" content="JAMEOF Foreign Employment Agency places screened, trained candidates into verified employment in Saudi Arabia, Qatar, Kuwait, Jordan, the UAE, and Bahrain.">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --navy:#0A2647;
+    --blue-deep:#12385F;
+    --blue-mid:#1D5B95;
+    --sky:#2C86C7;
+    --ice:#F3F8FC;
+    --white:#FFFFFF;
+    --line:#D9E5EF;
+    --ink:#0F2438;
+    --ink-soft:#4C6072;
+    --ff-display:'Fraunces', serif;
+    --ff-body:'Inter', sans-serif;
+    --ff-mono:'IBM Plex Mono', monospace;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation:none !important;transition:none !important;}
+  }
+  body{
+    background:var(--white);
+    color:var(--ink);
+    font-family:var(--ff-body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  ::selection{background:var(--sky);color:var(--white);}
+  :focus-visible{outline:2px solid var(--sky);outline-offset:3px;}
+
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px;}
+
+  .eyebrow{
+    font-family:var(--ff-mono);
+    font-size:11.5px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--sky);
+  }
+
+  h1,h2,h3{font-family:var(--ff-display);font-weight:600;letter-spacing:-0.01em;color:var(--navy);}
+
+  /* ---------- flight-path divider (signature) ---------- */
+  .route-divider{
+    position:relative;
+    height:26px;
+    overflow:hidden;
+  }
+  .route-divider svg{width:100%;height:100%;display:block;}
+  .route-divider .path{
+    stroke:var(--line);
+    stroke-width:1.5;
+    fill:none;
+    stroke-dasharray:2 8;
+  }
+  .route-divider .dot{fill:var(--sky);}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(255,255,255,0.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px 32px;max-width:1240px;margin:0 auto;
+  }
+  .logo{
+    font-family:var(--ff-display);
+    font-weight:600;
+    font-size:23px;
+    color:var(--navy);
+    display:flex;align-items:baseline;gap:10px;
+  }
+  .logo small{
+    font-family:var(--ff-mono);
+    font-size:9.5px;
+    letter-spacing:.13em;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+    font-weight:400;
+  }
+  nav.links{display:flex;gap:32px;}
+  nav.links a{font-size:14px;color:var(--ink-soft);font-weight:500;transition:color .2s;}
+  nav.links a:hover{color:var(--navy);}
+  .nav-cta{display:flex;align-items:center;gap:14px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 24px;border-radius:3px;
+    font-size:14px;font-weight:600;font-family:var(--ff-body);
+    cursor:pointer;border:1px solid transparent;
+    transition:transform .15s ease, background .2s, border-color .2s, color .2s;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-navy{background:var(--navy);color:var(--white);}
+  .btn-navy:hover{background:var(--blue-deep);}
+  .btn-outline{border-color:var(--line);color:var(--navy);}
+  .btn-outline:hover{border-color:var(--sky);}
+  .menu-toggle{display:none;background:none;border:none;color:var(--navy);font-size:26px;cursor:pointer;}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;padding:80px 0 0;background:linear-gradient(180deg,var(--ice) 0%, var(--white) 100%);}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;}
+  .hero-copy h1{font-size:clamp(36px,4.6vw,56px);line-height:1.08;margin:18px 0 22px;}
+  .hero-copy h1 em{font-style:italic;color:var(--sky);}
+  .hero-copy p{color:var(--ink-soft);font-size:17px;max-width:480px;margin-bottom:32px;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px;}
+  .hero-trust{display:flex;gap:28px;border-top:1px solid var(--line);padding-top:20px;flex-wrap:wrap;}
+  .hero-trust .item{font-family:var(--ff-mono);font-size:12px;color:var(--ink-soft);}
+  .hero-trust .item b{display:block;font-family:var(--ff-display);font-size:22px;color:var(--navy);font-weight:600;}
+
+  /* photo placeholder system */
+  .photo-slot{
+    position:relative;
+    background:repeating-linear-gradient(135deg, var(--ice), var(--ice) 10px, #EAF2F9 10px, #EAF2F9 20px);
+    border:1.5px dashed #B9CEE0;
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+  }
+  .photo-slot .label{
+    display:flex;flex-direction:column;align-items:center;gap:10px;
+    color:var(--blue-mid);
+    text-align:center;
+    padding:20px;
+  }
+  .photo-slot .label svg{width:30px;height:30px;opacity:.55;}
+  .photo-slot .label span{
+    font-family:var(--ff-mono);
+    font-size:11px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    max-width:180px;
+    line-height:1.5;
+  }
+  .photo-slot img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+
+  .hero-photo{
+    aspect-ratio:4/5;
+    border-radius:3px;
+  }
+  .hero-photo .tag{
+    position:absolute;bottom:16px;left:16px;z-index:2;
+    background:var(--navy);color:var(--white);
+    padding:9px 14px;
+    font-family:var(--ff-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+  }
+
+  section{padding:100px 0;}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head h2{font-size:clamp(28px,3.2vw,36px);margin-top:14px;}
+  .section-head p{color:var(--ink-soft);margin-top:16px;font-size:16px;}
+
+  /* ---------- destinations: boarding pass cards ---------- */
+  .dest-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+  }
+  .pass-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:4px;
+    overflow:hidden;
+    position:relative;
+    transition:box-shadow .25s, transform .25s;
+  }
+  .pass-card:hover{box-shadow:0 18px 40px rgba(10,38,71,0.1);transform:translateY(-3px);}
+  .pass-photo{aspect-ratio:16/10;}
+  .pass-body{padding:22px 22px 24px;position:relative;}
+  .pass-body::before{
+    content:'';
+    position:absolute;top:0;left:22px;right:22px;
+    border-top:1.5px dashed var(--line);
+  }
+  .pass-row{display:flex;justify-content:space-between;align-items:flex-start;padding-top:18px;}
+  .pass-code{font-family:var(--ff-mono);font-size:26px;color:var(--navy);font-weight:500;letter-spacing:.03em;}
+  .pass-flag{font-size:26px;line-height:1;}
+  .pass-body h3{font-size:19px;margin:12px 0 8px;}
+  .pass-body p{font-size:13.5px;color:var(--ink-soft);margin-bottom:14px;}
+  .pass-sectors{display:flex;gap:6px;flex-wrap:wrap;}
+  .pass-sectors span{
+    font-family:var(--ff-mono);
+    font-size:10px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    background:var(--ice);
+    color:var(--blue-mid);
+    padding:5px 9px;
+    border-radius:2px;
+  }
+  @media (max-width:980px){.dest-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:640px){.dest-grid{grid-template-columns:1fr;}}
+
+  /* ---------- services ---------- */
+  .services{background:var(--ice);}
+  .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .service-card{background:var(--white);padding:36px 26px;}
+  .service-card .ic{
+    width:42px;height:42px;border-radius:50%;
+    background:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:22px;
+  }
+  .service-card .ic svg{width:20px;height:20px;stroke:var(--white);}
+  .service-card h3{font-size:17px;margin-bottom:10px;}
+  .service-card p{font-size:13.5px;color:var(--ink-soft);}
+  @media (max-width:900px){.service-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:540px){.service-grid{grid-template-columns:1fr;}}
+
+  /* ---------- process (real sequence, numbered) ---------- */
+  .process-row{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;}
+  .process-row::before{
+    content:'';
+    position:absolute;top:19px;left:0;right:0;
+    border-top:1.5px dashed var(--line);
+    z-index:0;
+  }
+  .process-step{position:relative;z-index:1;padding-right:20px;}
+  .process-step .pn{
+    width:40px;height:40px;border-radius:50%;
+    background:var(--white);
+    border:1.5px solid var(--navy);
+    color:var(--navy);
+    font-family:var(--ff-mono);font-size:14px;font-weight:500;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:20px;
+  }
+  .process-step h3{font-size:16px;margin-bottom:8px;}
+  .process-step p{font-size:13px;color:var(--ink-soft);}
+  @media (max-width:900px){
+    .process-row{grid-template-columns:1fr;gap:34px;}
+    .process-row::before{display:none;}
+  }
+
+  /* ---------- why us ---------- */
+  .why-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center;}
+  .why-photo{aspect-ratio:4/5;border-radius:3px;}
+  .why-list{display:flex;flex-direction:column;gap:26px;}
+  .why-item{display:flex;gap:18px;}
+  .why-item .mk{
+    flex-shrink:0;
+    width:34px;height:34px;
+    border:1.5px solid var(--sky);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .why-item .mk span{width:7px;height:7px;background:var(--sky);border-radius:50%;}
+  .why-item h3{font-size:17px;margin-bottom:6px;}
+  .why-item p{font-size:14.5px;color:var(--ink-soft);}
+  @media (max-width:860px){.why-wrap{grid-template-columns:1fr;}}
+
+  /* ---------- gallery ---------- */
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    grid-auto-rows:180px;
+    gap:14px;
+  }
+  .gallery-grid .g1{grid-column:span 2;grid-row:span 2;}
+  .gallery-grid .g4{grid-column:span 2;}
+  .gallery-grid .photo-slot{border-radius:3px;}
+  @media (max-width:760px){
+    .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px;}
+    .gallery-grid .g1{grid-column:span 2;grid-row:span 2;}
+    .gallery-grid .g4{grid-column:span 2;}
+  }
+
+  /* ---------- testimonials ---------- */
+  .testimonials{background:var(--navy);color:var(--white);}
+  .testimonials .eyebrow{color:#7EB8E8;}
+  .testimonials .section-head h2{color:var(--white);}
+  .testimonials .section-head p{color:#B9CDE0;}
+  .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .t-card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.14);
+    border-radius:4px;
+    padding:28px;
+  }
+  .t-card p{font-size:14.5px;font-style:italic;color:#E7EEF5;margin-bottom:18px;}
+  .t-card .who{font-family:var(--ff-mono);font-size:11.5px;color:#8FB6DA;font-style:normal;}
+  @media (max-width:900px){.t-grid{grid-template-columns:1fr;}}
+
+  /* ---------- apply / contact ---------- */
+  .apply-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:0;border:1px solid var(--line);border-radius:4px;overflow:hidden;}
+  .apply-info{background:var(--ice);padding:48px;}
+  .apply-info h2{font-size:27px;margin:14px 0 22px;}
+  .apply-info p{color:var(--ink-soft);font-size:14.5px;margin-bottom:26px;}
+  .info-row{display:flex;gap:14px;padding:14px 0;border-top:1px solid var(--line);}
+  .info-row:first-of-type{border-top:none;}
+  .info-row .k{font-family:var(--ff-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--sky);width:80px;flex-shrink:0;padding-top:2px;}
+  .info-row .v{font-size:14.5px;color:var(--navy);}
+
+  .apply-form{padding:48px;}
+  .apply-form h3{font-size:19px;margin-bottom:20px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+  .form-row.full{grid-template-columns:1fr;}
+  label{
+    display:block;
+    font-family:var(--ff-mono);
+    font-size:10.5px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:7px;
+  }
+  input, select, textarea{
+    width:100%;
+    padding:12px 14px;
+    border:1px solid var(--line);
+    border-radius:3px;
+    font-family:var(--ff-body);
+    font-size:14px;
+    color:var(--ink);
+    background:var(--white);
+  }
+  input:focus, select:focus, textarea:focus{border-color:var(--sky);outline:none;}
+  .apply-form .btn{width:100%;justify-content:center;margin-top:6px;padding:14px;}
+  .form-note{font-size:12px;color:var(--ink-soft);margin-top:12px;}
+  @media (max-width:860px){
+    .apply-grid{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+  }
+
+  /* ---------- cta band ---------- */
+  .cta-band{background:linear-gradient(120deg, var(--navy), var(--blue-mid));padding:64px 0;text-align:center;}
+  .cta-band h2{color:var(--white);font-size:clamp(24px,3.2vw,34px);margin-bottom:14px;}
+  .cta-band p{color:#C4D9EC;margin-bottom:26px;font-size:15px;}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--navy);color:#C4D9EC;padding:56px 0 26px;}
+  .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:36px;margin-bottom:40px;}
+  .foot-grid .logo{color:var(--white);margin-bottom:14px;}
+  .foot-grid .logo small{color:#8FB6DA;}
+  .foot-grid > div > p{font-size:13.5px;max-width:280px;color:#9FC0DD;}
+  .foot-col h4{font-family:var(--ff-mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#7EB8E8;margin-bottom:16px;}
+  .foot-col a, .foot-col p{display:block;font-size:13.5px;color:#B9CDE0;margin-bottom:10px;}
+  .foot-col a:hover{color:var(--white);}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,0.14);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-family:var(--ff-mono);font-size:11.5px;color:#7A9CBB;}
+  @media (max-width:860px){.foot-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:520px){.foot-grid{grid-template-columns:1fr;}}
+
+  /* ---------- mobile nav + section grids ---------- */
+  @media (max-width:900px){
+    nav.links{
+      position:fixed;top:73px;left:0;right:0;
+      background:var(--white);
+      border-bottom:1px solid var(--line);
+      flex-direction:column;padding:20px 32px 26px;gap:18px;
+      transform:translateY(-130%);transition:transform .25s ease;z-index:99;
+    }
+    nav.links.open{transform:translateY(0);}
+    .menu-toggle{display:block;}
+    .nav-cta .btn-outline{display:none;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-photo{order:-1;aspect-ratio:16/10;}
+    .why-wrap{grid-template-columns:1fr;}
+  }
+  @media (max-width:600px){
+    .wrap{padding:0 20px;}
+    .nav-row{padding:16px 20px;}
+    section{padding:64px 0;}
+  }
+
+  [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  [data-reveal].in{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-row">
+    <a href="#top" class="logo">JAMEOF <small>Foreign Employment Agency</small></a>
+    <nav class="links" id="navLinks">
+      <a href="#destinations">Destinations</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#why">Why Us</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#apply">Apply</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:+251000000000" class="btn btn-outline">Call Us</a>
+      <a href="#apply" class="btn btn-navy">Apply Now</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Licensed Foreign Employment Agency</span>
+        <h1>Your route to verified<br>work in the <em>Gulf</em> &amp;<br>Jordan.</h1>
+        <p>JAMEOF screens, trains, and places candidates into legitimate employment across Saudi Arabia, Qatar, Kuwait, Jordan, the UAE, and Bahrain — with every step of the process handled in-house.</p>
+        <div class="hero-actions">
+          <a href="#apply" class="btn btn-navy">Start Your Application</a>
+          <a href="#destinations" class="btn btn-outline">View Destinations</a>
+        </div>
+        <div class="hero-trust">
+          <div class="item"><b>6</b>Destination Countries</div>
+          <div class="item"><b>100%</b>Verified Placements</div>
+          <div class="item"><b>End-to-End</b>Visa &amp; Travel Support</div>
+        </div>
+      </div>
+      <div class="photo-slot hero-photo" data-reveal>
+        <div class="label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"></rect><circle cx="8.5" cy="10" r="1.5"></circle><path d="M21 15l-5-5-7 7"></path></svg>
+          <span>Replace with photo:<br>candidate portrait or<br>successful placement</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="route-divider">
+    <svg viewBox="0 0 1200 26" preserveAspectRatio="none">
+      <path class="path" d="M0,13 L1200,13"></path>
+      <circle class="dot" cx="20" cy="13" r="3"></circle>
+      <circle class="dot" cx="1180" cy="13" r="3"></circle>
+    </svg>
+  </div>
+
+  <!-- DESTINATIONS -->
+  <section id="destinations">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">Where We Place Candidates</span>
+        <h2>Six countries. One verified process.</h2>
+        <p>Every destination runs through the same screening, training, and documentation standard — no shortcuts, no unverified employers.</p>
+      </div>
+      <div class="dest-grid">
+
+        <div class="pass-card" data-reveal>
+          <div class="photo-slot pass-photo">
+            <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"></rect><circle cx="8.5" cy="10" r="1.5"></circle><path d="M21 15l-5-5-7 7"></path></svg><span>Saudi Arabia photo</span></div>
+          </div>
+          <div class="pass-body">
+            <div class="pass-row"><span class="pass-code">JED / RUH</span><span class="pass-flag">🇸🇦</span></div>
+            <h3>Saudi Arabia</h3>
+            <p>Placement across Jeddah, Riyadh, and surrounding regions with direct employer verification.</p>
+            <div class="pass-sectors"><span>Domestic</span><span>Hospitality</span><span>Facilities</span></div>
+          </div>
+        </div>
+
+        <div class="pass-card" data-reveal>
+          <div class="photo-slot pass-photo">
+            <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"></rect><circle cx="8.5" cy="10" r="1.5"></circle><path d="M21 15l-5-5-7 7"></path></svg><span>Qatar photo</span></div>
+          </div>
+          <div class="pass-body">
+            <div class="pass-row"><span class="pass-code">DOH</span><span class="pass-flag">🇶🇦</span></div>
+            <h3>Qatar</h3>
+            <p>Roles in Doha spanning hospitality, facilities management, and private household staffing.</p>
+            <div class="pass-sectors"><span>Domestic</span><span>Hospitality</span></div>
+          </div>
+        </div>
+
+        <div class="pass-card" data-reveal>
+          <div class="photo-slot pass-photo">
+            <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"></rect><circle cx="8.5" cy="10" r="1.5"></circle><path d="M21 15l-5-5-7 7"></path></svg><span>Kuwait photo</span></div>
+          </div>
+          <div class="pass-body">
+            <div class="pass-row"><span class="pass-code">KWI</span><span class="pass-flag">🇰🇼</span></div>
+            <h3>Kuwait</h3>
+            <p>Household and facilities placements in Kuwait City with pre-departure orientation included.</p>
+            <div class="pass-sectors"><span>Domestic</span><span>Facilities</span></div>
+          </div>
+        </div>
+
+        <div class="pass-card" data-reveal>
+          <div class="photo-slot pass-photo">
+            <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"></rect><circle cx="8.5" cy="10" r="1.5"></circle><path d="M21 15l-5-5-7 7"></path></svg><span>Jordan photo</span></div>
+          </div>
+          <div class="pass-body">
+            <div class="pass-row"><span class="pass-code">AMM</span><span class="pass-flag">🇯🇴</span></div>
+            <h3>Jordan</h3>
+            <p>Amman-based placements with an emphasis on manufacturing and domestic sector roles.</p>
+            <div class="pass-sectors"><span>Domestic</span><span>Manufacturing</span></div>
+          </div>
+        </div>
+
+        <div class="pass-card" data-reveal>
+          <div class="photo-slot pass-photo">
+            <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"></rect><circle cx="8.5" cy="10" r="1.5"></circle><path d="M21 15l-5-5-7 7"></path></svg><span>Dubai / UAE photo</span></div>
+          </div>
+          <div class="pass-body">
+            <div class="pass-row"><span class="pass-code">DXB</span><span class="pass-flag">🇦🇪</span></div>
+            <h3>United Arab Emirates</h3>
+            <p>Dubai-focused roles across hospitality, retail support, and private household staffing.</p>
+            <div class="pass-sectors"><span>Hospitality</span><span>Retail</span></div>
+          </div>
+        </div>
+
+        <div class="pass-card" data-reveal>
+          <div class="photo-slot pass-photo">
+            <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"></rect><circle cx="8.5" cy="10" r="1.5"></circle><path d="M21 15l-5-5-7 7"></path></svg><span>Bahrain photo</span></div>
+          </div>
+          <div class="pass-body">
+            <div class="pass-row"><span class="pass-code">BAH</span><span class="pass-flag">🇧🇭</span></div>
+            <h3>Bahrain</h3>
+            <p>Manama placements in domestic and hospitality roles with verified host families and employers.</p>
+            <div class="pass-sectors"><span>Domestic</span><span>Hospitality</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">What We Handle</span>
+        <h2>Everything between application and arrival</h2>
+      </div>
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"></path></svg></div>
+          <h3>Candidate Screening</h3>
+          <p>Background checks, skills assessment, and interviews to match candidates to the right role.</p>
+        </div>
+        <div class="service-card">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h13l3 4-3 4H4z"></path><path d="M4 12v8"></path></svg></div>
+          <h3>Visa &amp; Documentation</h3>
+          <p>Full handling of work visas, contracts, and legal paperwork for each destination country.</p>
+        </div>
+        <div class="service-card">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 12l6-6M3 12l6 6"></path></svg></div>
+          <h3>Pre-Departure Training</h3>
+          <p>Orientation on workplace expectations, language basics, and life in the destination country.</p>
+        </div>
+        <div class="service-card">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"></path><circle cx="12" cy="12" r="9"></circle></svg></div>
+          <h3>Post-Arrival Support</h3>
+          <p>A point of contact after deployment for both the candidate and the family back home.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">The Journey</span>
+        <h2>From registration to deployment</h2>
+      </div>
+      <div class="process-row">
+        <div class="process-step"><span class="pn">01</span><h3>Register</h3><p>Submit your details and desired destination at our office or online.</p></div>
+        <div class="process-step"><span class="pn">02</span><h3>Screen &amp; Train</h3><p>Interview, skills check, and pre-departure orientation.</p></div>
+        <div class="process-step"><span class="pn">03</span><h3>Match</h3><p>Placement against a verified employer opening in your chosen country.</p></div>
+        <div class="process-step"><span class="pn">04</span><h3>Visa &amp; Travel</h3><p>Documentation, contract signing, and travel arrangements.</p></div>
+        <div class="process-step"><span class="pn">05</span><h3>Deploy</h3><p>Departure with ongoing support once you've arrived.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why" style="background:var(--ice);">
+    <div class="wrap why-wrap">
+      <div class="photo-slot why-photo" data-reveal>
+        <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"></rect><circle cx="8.5" cy="10" r="1.5"></circle><path d="M21 15l-5-5-7 7"></path></svg><span>Replace with photo:<br>office, staff, or training session</span></div>
+      </div>
+      <div data-reveal>
+        <span class="eyebrow">Why Families Trust Jameof</span>
+        <h2 style="margin-top:14px;font-size:clamp(26px,3vw,32px);">Nothing about your placement is left to chance</h2>
+        <div class="why-list" style="margin-top:30px;">
+          <div class="why-item">
+            <div class="mk"><span></span></div>
+            <div><h3>Licensed &amp; Regulated</h3><p>Operating as a registered foreign employment agency, following the placement standards required for each destination.</p></div>
+          </div>
+          <div class="why-item">
+            <div class="mk"><span></span></div>
+            <div><h3>Verified Employers Only</h3><p>Every opening is checked before a candidate is matched to it — no unverified sponsors or agencies.</p></div>
+          </div>
+          <div class="why-item">
+            <div class="mk"><span></span></div>
+            <div><h3>Transparent Costs</h3><p>Fees and terms are explained in full before you sign anything, with nothing added later.</p></div>
+          </div>
+          <div class="why-item">
+            <div class="mk"><span></span></div>
+            <div><h3>Support After Departure</h3><p>A contact point stays open for the candidate and their family for the length of the contract.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">From The Agency</span>
+        <h2>Departures, training, and arrivals</h2>
+        <p>Drop your own photos into these slots — departure days, training sessions, office visits, and placement confirmations.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="photo-slot g1"><div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"></rect><circle cx="8.5" cy="10" r="1.5"></circle><path d="M21 15l-5-5-7 7"></path></svg><span>Departure day</span></div></div>
+        <div class="photo-slot g2"><div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"></rect><circle cx="8.5" cy="10" r="1.5"></circle><path d="M21 15l-5-5-7 7"></path></svg><span>Training session</span></div></div>
+        <div class="photo-slot g3"><div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"></rect><circle cx="8.5" cy="10" r="1.5"></circle><path d="M21 15l-5-5-7 7"></path></svg><span>Office visit</span></div></div>
+        <div class="photo-slot g4"><div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"></rect><circle cx="8.5" cy="10" r="1.5"></circle><path d="M21 15l-5-5-7 7"></path></svg><span>Successful placement</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">Candidate Stories</span>
+        <h2>Replace with real feedback</h2>
+        <p>These are placeholder quotes — swap them for words from candidates you've placed.</p>
+      </div>
+      <div class="t-grid">
+        <div class="t-card" data-reveal><p>"Add a short quote from a candidate about their experience with the process."</p><div class="who">— Replace with name, destination country</div></div>
+        <div class="t-card" data-reveal><p>"A second placeholder testimonial — swap this for real feedback from a placed candidate."</p><div class="who">— Replace with name, destination country</div></div>
+        <div class="t-card" data-reveal><p>"A third testimonial slot, ideally from a family member describing the support they received."</p><div class="who">— Replace with name, relationship</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLY -->
+  <section id="apply">
+    <div class="wrap">
+      <div class="apply-grid" data-reveal>
+        <div class="apply-info">
+          <span class="eyebrow">Get In Touch</span>
+          <h2>Start your application</h2>
+          <p>Reach out directly or fill in the form and our team will follow up with next steps for your chosen destination.</p>
+          <div class="info-row"><span class="k">Phone</span><span class="v">[Add phone number]</span></div>
+          <div class="info-row"><span class="k">Email</span><span class="v">[Add email address]</span></div>
+          <div class="info-row"><span class="k">Office</span><span class="v">[Add office address, city]</span></div>
+          <div class="info-row"><span class="k">Hours</span><span class="v">[Add opening hours]</span></div>
+        </div>
+        <div class="apply-form">
+          <h3>Candidate Interest Form</h3>
+          <form onsubmit="return false;">
+            <div class="form-row">
+              <div><label for="fname">Full Name</label><input id="fname" type="text" placeholder="Enter your full name"></div>
+              <div><label for="phone">Phone Number</label><input id="phone" type="tel" placeholder="09xx xxx xxx"></div>
+            </div>
+            <div class="form-row">
+              <div><label for="dest">Preferred Destination</label>
+                <select id="dest">
+                  <option>Saudi Arabia</option>
+                  <option>Qatar</option>
+                  <option>Kuwait</option>
+                  <option>Jordan</option>
+                  <option>United Arab Emirates</option>
+                  <option>Bahrain</option>
+                </select>
+              </div>
+              <div><label for="role">Type of Work</label><input id="role" type="text" placeholder="e.g. Domestic, Hospitality"></div>
+            </div>
+            <div class="form-row full">
+              <div><label for="msg">Message (Optional)</label><textarea id="msg" rows="3" placeholder="Anything else we should know"></textarea></div>
+            </div>
+            <button type="submit" class="btn btn-navy">Submit Application</button>
+            <p class="form-note">This form needs a backend to actually send submissions — connect it to a service like Formspree or Getform before publishing.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <div class="wrap">
+      <h2>Ready to take the next step?</h2>
+      <p>Speak with our team about openings in your preferred destination country.</p>
+      <a href="#apply" class="btn" style="background:var(--white);color:var(--navy);">Apply Now</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#top" class="logo">JAMEOF <small>Foreign Employment Agency</small></a>
+        <p>Placing screened, trained candidates into verified employment across the Gulf and Jordan.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Destinations</h4>
+        <a href="#destinations">Saudi Arabia</a>
+        <a href="#destinations">Qatar · Kuwait</a>
+        <a href="#destinations">Jordan · UAE · Bahrain</a>
+      </div>
+      <div class="foot-col">
+        <h4>Agency</h4>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#why">Why Us</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <p>[0911134027]</p>
+        <p>[Add office address]</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> JAMEOF Foreign Employment Agency</span>
+      <span>Licensed Placement Services</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const toggle = document.getElementById('menuToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  const revealEls = document.querySelectorAll('[data-reveal]');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
